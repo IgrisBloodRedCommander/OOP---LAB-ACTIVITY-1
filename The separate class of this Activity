@@ -1,0 +1,80 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package employee_act1;
+
+/**
+ *
+ * @author User
+ */
+
+public class EmployeeClass {
+
+    private String name;
+    private int employeeId;
+    private String department;
+    private double Msalary;
+
+    public EmployeeClass() {
+        this.name = "Unknown";
+        this.employeeId = 0;
+        this.department = "None";
+        this.Msalary = 0.0;
+    }
+
+    public EmployeeClass(String name, int employeeId, String department, double monthlySalary) {
+        this.name = name;
+        this.employeeId = employeeId;
+        this.department = department;
+        this.Msalary = monthlySalary;
+    }
+
+    public double calculateAnnualSalary() {
+        return Msalary * 12;
+    }
+
+    public double getSalary() {
+        return Msalary;
+    }
+
+    public void setSalary(double salary) {
+        this.Msalary = salary;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String Dep) {
+        this.department = Dep;
+    }
+
+    public int getId() {
+        return employeeId;
+    }
+
+    public void setId(int id) {
+        this.employeeId = id;
+    }
+
+    public void displayEmployeeINFO() {
+        System.out.println("Employee Information:");
+        System.out.println("Name: " + name);
+        System.out.println("Employee ID: " + employeeId);
+        System.out.println("Department: " + department);
+        System.out.println("Monthly Salary: $" + Msalary);
+        System.out.println("Annual Salary: $" + calculateAnnualSalary());
+        System.out.println("-----------------------------");
+    }
+}
+
+    
