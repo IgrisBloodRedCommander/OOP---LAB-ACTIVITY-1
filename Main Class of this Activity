@@ -1,0 +1,62 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package employee_act1;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/**
+ *
+ * @author User
+ */
+public class TestingArea {
+public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // List to store multiple employees
+        ArrayList<EmployeeClass> employeeList = new ArrayList<>();
+
+        while (true) {
+            // Input employee information
+            System.out.println("Input Employee Name: ");
+            String name = input.nextLine();
+
+            System.out.println("Input Employee ID: ");
+            int id = input.nextInt();
+            input.nextLine(); 
+
+            System.out.println("Input Employee Department: ");
+            String dep = input.nextLine();
+
+            System.out.println("Input Employee Monthly Salary: ");
+            double monthSal = input.nextDouble();
+            input.nextLine(); 
+
+            // Create and store employee
+            EmployeeClass newEmployee = new EmployeeClass(name, id, dep, monthSal);
+            employeeList.add(newEmployee);
+
+            // Ask if user wants to continue
+            System.out.println("Do you want to add another employee? (0 = Yes, 1 = No): ");
+            int choice = input.nextInt();
+            input.nextLine(); 
+
+            if (choice == 1) {
+                break;
+            } else if (choice != 0) {
+                System.out.println("Invalid input. Exiting...");
+                break;
+            }
+        }
+
+       
+        System.out.println("-----------------------------\nAll Employee Information:");
+        for (EmployeeClass emp : employeeList) {
+            emp.displayEmployeeINFO();
+        }
+
+        input.close();
+    }
+}
